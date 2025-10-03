@@ -24,7 +24,7 @@ export const Accordion = ({
   className,
 }: Props): JSX.Element => {
   return (
-    <div className={`accordion flush-${flush} ${itemCount} ${className}`}>
+    <div className={`accordion ${itemCount} flush-${flush} ${className}`}>
       <div className="components-accordion">
         <div className="accordion-header">
           <div className="header">
@@ -35,7 +35,7 @@ export const Accordion = ({
               iconLeft={false}
               iconRight={false}
               subtitle={false}
-              textClassName={`${itemCount === "three" && !flush ? "class" : "class-2"}`}
+              textClassName="text-title-instance"
               title="Accordion Item"
             />
             <div className="icon">
@@ -63,14 +63,14 @@ export const Accordion = ({
                       (!flush && itemCount === "six") ||
                       (!flush && itemCount === "ten") ||
                       (flush && itemCount === "two")
-                        ? "https://c.animaapp.com/TPurQgEt/img/union-169.svg"
+                        ? "https://c.animaapp.com/95tGcsL0/img/union-169.svg"
                         : itemCount === "three" && !flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-115.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-115.svg"
                           : !flush && ["five", "four"].includes(itemCount)
-                            ? "https://c.animaapp.com/TPurQgEt/img/union-124.svg"
+                            ? "https://c.animaapp.com/95tGcsL0/img/union-124.svg"
                             : itemCount === "two" && !flush
-                              ? "https://c.animaapp.com/TPurQgEt/img/union-118.svg"
-                              : "https://c.animaapp.com/TPurQgEt/img/union-213.svg"
+                              ? "https://c.animaapp.com/95tGcsL0/img/union-118.svg"
+                              : "https://c.animaapp.com/95tGcsL0/img/union-213.svg"
                     }
                   />
                 </div>
@@ -102,7 +102,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -125,12 +125,12 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         itemCount === "three" && !flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-117.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-117.svg"
                           : flush
-                            ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
+                            ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
                             : !flush && ["five", "four"].includes(itemCount)
-                              ? "https://c.animaapp.com/TPurQgEt/img/union-126.svg"
-                              : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                              ? "https://c.animaapp.com/95tGcsL0/img/union-126.svg"
+                              : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -158,7 +158,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -181,10 +181,10 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
                           : !flush && ["five", "four"].includes(itemCount)
-                            ? "https://c.animaapp.com/TPurQgEt/img/union-126.svg"
-                            : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                            ? "https://c.animaapp.com/95tGcsL0/img/union-126.svg"
+                            : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -206,7 +206,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -229,12 +229,12 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
                           : itemCount === "three" && !flush
-                            ? "https://c.animaapp.com/TPurQgEt/img/union-117.svg"
+                            ? "https://c.animaapp.com/95tGcsL0/img/union-117.svg"
                             : itemCount === "two" && !flush
-                              ? "https://c.animaapp.com/TPurQgEt/img/union-119.svg"
-                              : "https://c.animaapp.com/TPurQgEt/img/union-126.svg"
+                              ? "https://c.animaapp.com/95tGcsL0/img/union-119.svg"
+                              : "https://c.animaapp.com/95tGcsL0/img/union-126.svg"
                       }
                     />
                   </div>
@@ -256,7 +256,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -279,8 +279,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -302,7 +302,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -325,8 +325,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -348,7 +348,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -371,8 +371,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -394,7 +394,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -417,8 +417,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -440,7 +440,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -463,8 +463,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -486,7 +486,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -509,8 +509,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -532,7 +532,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -555,100 +555,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {itemCount === "eight" && (
-        <div className="components-accordion-10">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="text-title-instance"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {["nine", "ten"].includes(itemCount) && (
-        <div className="components-accordion-11">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="text-title-instance"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -660,7 +568,7 @@ export const Accordion = ({
       )}
 
       {itemCount === "nine" && (
-        <div className="components-accordion-12">
+        <div className="components-accordion-10">
           <div className="header-wrapper">
             <div className="header">
               <TextTitle
@@ -670,7 +578,7 @@ export const Accordion = ({
                 iconLeft={false}
                 iconRight={false}
                 subtitle={false}
-                textClassName="text-title-instance"
+                textClassName="instance-node"
                 title="Accordion Item"
               />
               <div className="div">
@@ -693,8 +601,8 @@ export const Accordion = ({
                       alt="Union"
                       src={
                         flush
-                          ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                          : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                       }
                     />
                   </div>
@@ -707,7 +615,7 @@ export const Accordion = ({
 
       {itemCount === "ten" && (
         <>
-          <div className="components-accordion-13">
+          <div className="components-accordion-11">
             <div className="header-wrapper">
               <div className="header">
                 <TextTitle
@@ -717,7 +625,7 @@ export const Accordion = ({
                   iconLeft={false}
                   iconRight={false}
                   subtitle={false}
-                  textClassName="text-title-instance"
+                  textClassName="instance-node"
                   title="Accordion Item"
                 />
                 <div className="div">
@@ -740,8 +648,8 @@ export const Accordion = ({
                         alt="Union"
                         src={
                           flush
-                            ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                            : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                            ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                            : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                         }
                       />
                     </div>
@@ -751,7 +659,7 @@ export const Accordion = ({
             </div>
           </div>
 
-          <div className="components-accordion-14">
+          <div className="components-accordion-12">
             <div className="header-wrapper">
               <div className="header">
                 <TextTitle
@@ -761,7 +669,7 @@ export const Accordion = ({
                   iconLeft={false}
                   iconRight={false}
                   subtitle={false}
-                  textClassName="text-title-instance"
+                  textClassName="instance-node"
                   title="Accordion Item"
                 />
                 <div className="div">
@@ -784,8 +692,8 @@ export const Accordion = ({
                         alt="Union"
                         src={
                           flush
-                            ? "https://c.animaapp.com/TPurQgEt/img/union-222.svg"
-                            : "https://c.animaapp.com/TPurQgEt/img/union-168.svg"
+                            ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
+                            : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
                         }
                       />
                     </div>

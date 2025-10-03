@@ -1,18 +1,20 @@
 .box {
-  min-height: 100vh;
-  width: 100%;
-  padding: 20px;
-  background-color: #f8f9fa;
+  height: 7868px;
+  width: 888px;
 
-  .accordion-container {
-    max-width: 856px;
-    margin: 0 auto;
+  .accordion-2 {
+    align-items: flex-start;
     background-color: #e9ecef;
-    border: 1px dashed #7b61ff;
+    border: 1px dashed;
+    border-color: #7b61ff;
     border-radius: 5px;
-    padding: 16px;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     gap: 30px;
+    left: 928px;
+    overflow: hidden;
+    padding: 16px;
+    position: fixed;
+    top: 0;
   }
 }
