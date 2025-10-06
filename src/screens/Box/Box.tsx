@@ -1,46 +1,40 @@
 import React from "react";
-import { AccordionInstanceWrapperSubsection } from "./sections/AccordionInstanceWrapperSubsection";
-import { AccordionWrapperSubsection } from "./sections/AccordionWrapperSubsection";
-import { DivSubsection } from "./sections/DivSubsection";
-import { ItemCountFlush1Subsection } from "./sections/ItemCountFlush1Subsection";
-import { ItemCountFlush2Subsection } from "./sections/ItemCountFlush2Subsection";
-import { ItemCountFlush3Subsection } from "./sections/ItemCountFlush3Subsection";
-import { ItemCountFlush4Subsection } from "./sections/ItemCountFlush4Subsection";
-import { ItemCountFlush5Subsection } from "./sections/ItemCountFlush5Subsection";
-import { ItemCountFlush6Subsection } from "./sections/ItemCountFlush6Subsection";
-import { ItemCountFlush7Subsection } from "./sections/ItemCountFlush7Subsection";
-import { ItemCountFlush8Subsection } from "./sections/ItemCountFlush8Subsection";
-import { ItemCountFlush9Subsection } from "./sections/ItemCountFlush9Subsection";
-import { ItemCountFlush10Subsection } from "./sections/ItemCountFlush10Subsection";
-import { ItemCountFlush11Subsection } from "./sections/ItemCountFlush11Subsection";
-import { ItemCountFlush12Subsection } from "./sections/ItemCountFlush12Subsection";
-import { ItemCountFlushSubsection } from "./sections/ItemCountFlushSubsection";
-import { ItemCountFlushWrapperSubsection } from "./sections/ItemCountFlushWrapperSubsection";
-import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection";
+import { Accordion } from "../../components/Accordion/Accordion";
 import "./style.scss";
 
 export const Box = (): JSX.Element => {
+  const createItems = (count: number) =>
+    Array.from({ length: count }, (_, i) => ({
+      title: `Accordion Item #${i + 1}`,
+      content: (
+        <div>
+          <strong>This is item #{i + 1}'s accordion body.</strong> It contains
+          the content for this accordion section.
+        </div>
+      ),
+    }));
+
   return (
     <div className="box" data-model-id="384:2607-frame">
-      <div className="accordion-2">
-        <ItemCountFlushSubsection />
-        <ItemCountFlushWrapperSubsection />
-        <AccordionWrapperSubsection />
-        <AccordionInstanceWrapperSubsection />
-        <DivSubsection />
-        <SectionComponentNodeSubsection />
-        <ItemCountFlush1Subsection />
-        <ItemCountFlush2Subsection />
-        <ItemCountFlush3Subsection />
-        <ItemCountFlush4Subsection />
-        <ItemCountFlush5Subsection />
-        <ItemCountFlush6Subsection />
-        <ItemCountFlush7Subsection />
-        <ItemCountFlush8Subsection />
-        <ItemCountFlush9Subsection />
-        <ItemCountFlush10Subsection />
-        <ItemCountFlush11Subsection />
-        <ItemCountFlush12Subsection />
+      <div className="accordion-container">
+        <Accordion items={createItems(3)} flush={false} defaultOpenIndex={0} />
+        <Accordion items={createItems(2)} flush={false} />
+        <Accordion items={createItems(4)} flush={false} />
+        <Accordion items={createItems(5)} flush={false} />
+        <Accordion items={createItems(6)} flush={false} />
+        <Accordion items={createItems(7)} flush={false} />
+        <Accordion items={createItems(8)} flush={false} />
+        <Accordion items={createItems(9)} flush={false} />
+        <Accordion items={createItems(10)} flush={false} />
+        <Accordion items={createItems(2)} flush={true} />
+        <Accordion items={createItems(3)} flush={true} />
+        <Accordion items={createItems(4)} flush={true} />
+        <Accordion items={createItems(5)} flush={true} />
+        <Accordion items={createItems(6)} flush={true} />
+        <Accordion items={createItems(7)} flush={true} />
+        <Accordion items={createItems(8)} flush={true} />
+        <Accordion items={createItems(9)} flush={true} />
+        <Accordion items={createItems(10)} flush={true} />
       </div>
     </div>
   );

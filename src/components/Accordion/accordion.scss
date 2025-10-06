@@ -3,129 +3,123 @@
   flex-direction: column;
   width: 100%;
 
-  &__item {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    margin-top: -1px;
+  &:not(.accordion-flush) {
+    .accordion-item {
+      border: 1px solid #dee2e6;
+      margin-top: -1px;
 
-    &:first-child {
-      margin-top: 0;
-      border-radius: 6px 6px 0 0;
-    }
+      &:first-child {
+        border-radius: 6px 6px 0 0;
+        overflow: hidden;
+      }
 
-    &:last-child {
-      border-radius: 0 0 6px 6px;
-    }
+      &:last-child {
+        border-radius: 0 0 6px 6px;
+        overflow: hidden;
+      }
 
-    &:first-child:last-child {
-      border-radius: 6px;
+      &:only-child {
+        border-radius: 6px;
+      }
     }
   }
 
-  &__header {
+  &.accordion-flush {
+    .accordion-item {
+      border: none;
+      border-bottom: 1px solid #dee2e6;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.accordion-item {
+  background-color: #ffffff;
+
+  .accordion-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px 20px;
-    background-color: #ffffff;
     cursor: pointer;
+    background-color: #ec407a;
+    border-bottom: 1px solid #dee2e6;
     transition: background-color 0.2s ease;
-    user-select: none;
 
     &:hover {
-      background-color: #f8f9fa;
+      background-color: #d81b60;
     }
 
-    &:focus {
-      outline: 2px solid #4a90e2;
-      outline-offset: -2px;
+    .accordion-title {
+      flex: 1;
+      color: #ffffff;
+      font-family: "Roboto", Helvetica;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
     }
-  }
 
-  &__item--open &__header {
-    background-color: #cfe2ff;
-    border-bottom: 1px solid #dee2e6;
-  }
+    .accordion-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      color: #ffffff;
+      transition: transform 0.2s ease;
 
-  &__title {
-    flex: 1;
-    font-family: "Roboto", Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #212529;
-  }
+      &.open {
+        transform: rotate(180deg);
+      }
 
-  &__item--open &__title {
-    color: #052c65;
-  }
-
-  &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 8px;
-    color: #212529;
-  }
-
-  &__chevron {
-    transition: transform 0.3s ease;
-
-    &--open {
-      transform: rotate(180deg);
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
-  &__body {
-    border-top: 1px solid #dee2e6;
-    animation: slideDown 0.3s ease;
-  }
-
-  &__content {
+  .accordion-body {
     padding: 16px 20px;
-    font-family: "Roboto", Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    color: #212529;
-  }
+    background-color: #ffffff;
+    border-bottom: 1px solid #dee2e6;
+    animation: slideDown 0.2s ease;
 
-  &--flush {
-    .accordion__item {
-      border-left: none;
-      border-right: none;
-      border-radius: 0;
-
-      &:first-child {
-        border-top: none;
-        border-radius: 0;
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
       }
-
-      &:last-child {
-        border-radius: 0;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
+  }
 
-    .accordion__header {
-      background-color: transparent;
+  &.flush {
+    .accordion-header {
+      background-color: #ffffff;
+      border-bottom: none;
+
+      .accordion-title {
+        color: #212529;
+      }
+
+      .accordion-icon {
+        color: #212529;
+      }
 
       &:hover {
         background-color: #f8f9fa;
       }
     }
 
-    .accordion__item--open .accordion__header {
-      background-color: #cfe2ff;
+    .accordion-body {
+      border-bottom: none;
     }
-  }
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    max-height: 0;
-  }
-  to {
-    opacity: 1;
-    max-height: 1000px;
   }
 }

@@ -1,709 +1,88 @@
-import React from "react";
-import { LayoutSlotsBase } from "../LayoutSlotsBase";
-import { TextTitle } from "../TextTitle";
-import "./style.scss";
+import React, { useState } from "react";
+import "./accordion.scss";
 
-interface Props {
-  itemCount:
-    | "seven"
-    | "two"
-    | "ten"
-    | "three"
-    | "nine"
-    | "four"
-    | "five"
-    | "eight"
-    | "six";
+interface AccordionItemProps {
+  title: string;
+  content: React.ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
   flush: boolean;
-  className: any;
 }
 
-export const Accordion = ({
-  itemCount,
+const AccordionItem: React.FC<AccordionItemProps> = ({
+  title,
+  content,
+  isOpen,
+  onToggle,
   flush,
-  className,
-}: Props): JSX.Element => {
+}) => {
   return (
-    <div className={`accordion ${itemCount} flush-${flush} ${className}`}>
-      <div className="components-accordion">
-        <div className="accordion-header">
-          <div className="header">
-            <TextTitle
-              badge={false}
-              className="title"
-              fillContainer
-              iconLeft={false}
-              iconRight={false}
-              subtitle={false}
-              textClassName="text-title-instance"
-              title="Accordion Item"
+    <div className={`accordion-item ${flush ? "flush" : ""}`}>
+      <div className="accordion-header" onClick={onToggle}>
+        <div className="accordion-title">{title}</div>
+        <div className={`accordion-icon ${isOpen ? "open" : ""}`}>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M4 6L8 10L12 6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
-            <div className="icon">
-              <div className="width-change-size">
-                <div className="ignore" />
-
-                <div className="ignore" />
-              </div>
-
-              <div className="icon-wrapper-h">
-                <div className="height-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper">
-                  <img
-                    className="union"
-                    alt="Union"
-                    src={
-                      (!flush && itemCount === "eight") ||
-                      (!flush && itemCount === "nine") ||
-                      (!flush && itemCount === "seven") ||
-                      (!flush && itemCount === "six") ||
-                      (!flush && itemCount === "ten") ||
-                      (flush && itemCount === "two")
-                        ? "https://c.animaapp.com/95tGcsL0/img/union-169.svg"
-                        : itemCount === "three" && !flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-115.svg"
-                          : !flush && ["five", "four"].includes(itemCount)
-                            ? "https://c.animaapp.com/95tGcsL0/img/union-124.svg"
-                            : itemCount === "two" && !flush
-                              ? "https://c.animaapp.com/95tGcsL0/img/union-118.svg"
-                              : "https://c.animaapp.com/95tGcsL0/img/union-213.svg"
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="accordion-body">
-          <LayoutSlotsBase className="layout-slots-base-instance" />
+          </svg>
         </div>
       </div>
-
-      {(itemCount === "eight" ||
-        itemCount === "five" ||
-        itemCount === "four" ||
-        itemCount === "nine" ||
-        itemCount === "seven" ||
-        itemCount === "six" ||
-        itemCount === "ten" ||
-        itemCount === "three") && (
-        <div className="accordion-header-wrapper">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        itemCount === "three" && !flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-117.svg"
-                          : flush
-                            ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                            : !flush && ["five", "four"].includes(itemCount)
-                              ? "https://c.animaapp.com/95tGcsL0/img/union-126.svg"
-                              : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {(itemCount === "eight" ||
-        itemCount === "five" ||
-        itemCount === "four" ||
-        itemCount === "nine" ||
-        itemCount === "seven" ||
-        itemCount === "six" ||
-        itemCount === "ten") && (
-        <div className="div-wrapper">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : !flush && ["five", "four"].includes(itemCount)
-                            ? "https://c.animaapp.com/95tGcsL0/img/union-126.svg"
-                            : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {["four", "three", "two"].includes(itemCount) && (
-        <div className="components-accordion-2">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : itemCount === "three" && !flush
-                            ? "https://c.animaapp.com/95tGcsL0/img/union-117.svg"
-                            : itemCount === "two" && !flush
-                              ? "https://c.animaapp.com/95tGcsL0/img/union-119.svg"
-                              : "https://c.animaapp.com/95tGcsL0/img/union-126.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {["eight", "five", "nine", "seven", "six", "ten"].includes(itemCount) && (
-        <div className="components-accordion-3">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {itemCount === "five" && (
-        <div className="components-accordion-4">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {["eight", "nine", "seven", "six", "ten"].includes(itemCount) && (
-        <div className="components-accordion-5">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {itemCount === "six" && (
-        <div className="components-accordion-6">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {["eight", "nine", "seven", "ten"].includes(itemCount) && (
-        <div className="components-accordion-7">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {itemCount === "seven" && (
-        <div className="components-accordion-8">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {["eight", "nine", "ten"].includes(itemCount) && (
-        <div className="components-accordion-9">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {itemCount === "nine" && (
-        <div className="components-accordion-10">
-          <div className="header-wrapper">
-            <div className="header">
-              <TextTitle
-                badge={false}
-                className="title"
-                fillContainer
-                iconLeft={false}
-                iconRight={false}
-                subtitle={false}
-                textClassName="instance-node"
-                title="Accordion Item"
-              />
-              <div className="div">
-                <div className="width-change-size">
-                  <div className="ignore" />
-
-                  <div className="ignore" />
-                </div>
-
-                <div className="icon-wrapper-h">
-                  <div className="height-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper">
-                    <img
-                      className="img"
-                      alt="Union"
-                      src={
-                        flush
-                          ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                          : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {itemCount === "ten" && (
-        <>
-          <div className="components-accordion-11">
-            <div className="header-wrapper">
-              <div className="header">
-                <TextTitle
-                  badge={false}
-                  className="title"
-                  fillContainer
-                  iconLeft={false}
-                  iconRight={false}
-                  subtitle={false}
-                  textClassName="instance-node"
-                  title="Accordion Item"
-                />
-                <div className="div">
-                  <div className="width-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper-h">
-                    <div className="height-change-size">
-                      <div className="ignore" />
-
-                      <div className="ignore" />
-                    </div>
-
-                    <div className="icon-wrapper">
-                      <img
-                        className="img"
-                        alt="Union"
-                        src={
-                          flush
-                            ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                            : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                        }
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="components-accordion-12">
-            <div className="header-wrapper">
-              <div className="header">
-                <TextTitle
-                  badge={false}
-                  className="title"
-                  fillContainer
-                  iconLeft={false}
-                  iconRight={false}
-                  subtitle={false}
-                  textClassName="instance-node"
-                  title="Accordion Item"
-                />
-                <div className="div">
-                  <div className="width-change-size">
-                    <div className="ignore" />
-
-                    <div className="ignore" />
-                  </div>
-
-                  <div className="icon-wrapper-h">
-                    <div className="height-change-size">
-                      <div className="ignore" />
-
-                      <div className="ignore" />
-                    </div>
-
-                    <div className="icon-wrapper">
-                      <img
-                        className="img"
-                        alt="Union"
-                        src={
-                          flush
-                            ? "https://c.animaapp.com/95tGcsL0/img/union-222.svg"
-                            : "https://c.animaapp.com/95tGcsL0/img/union-168.svg"
-                        }
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
+      {isOpen && <div className="accordion-body">{content}</div>}
+    </div>
+  );
+};
+
+export interface AccordionProps {
+  items: Array<{
+    title: string;
+    content: React.ReactNode;
+  }>;
+  flush?: boolean;
+  defaultOpenIndex?: number;
+  allowMultiple?: boolean;
+  className?: string;
+}
+
+export const Accordion: React.FC<AccordionProps> = ({
+  items,
+  flush = false,
+  defaultOpenIndex,
+  allowMultiple = false,
+  className = "",
+}) => {
+  const [openIndexes, setOpenIndexes] = useState<number[]>(
+    defaultOpenIndex !== undefined ? [defaultOpenIndex] : []
+  );
+
+  const handleToggle = (index: number) => {
+    if (allowMultiple) {
+      setOpenIndexes((prev) =>
+        prev.includes(index)
+          ? prev.filter((i) => i !== index)
+          : [...prev, index]
+      );
+    } else {
+      setOpenIndexes((prev) => (prev.includes(index) ? [] : [index]));
+    }
+  };
+
+  return (
+    <div className={`accordion ${flush ? "accordion-flush" : ""} ${className}`}>
+      {items.map((item, index) => (
+        <AccordionItem
+          key={index}
+          title={item.title}
+          content={item.content}
+          isOpen={openIndexes.includes(index)}
+          onToggle={() => handleToggle(index)}
+          flush={flush}
+        />
+      ))}
     </div>
   );
 };
